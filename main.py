@@ -21,7 +21,9 @@ from bokeh.io import curdoc
 # Local, relative module imports
 sys.path.append(os.getcwd())
 from utils import read_metadata, md_reader, create_pandas_dataframe,\
-	get_sample_names
+    get_sample_names
+from generateISA import create_metadata, main
+
 
 # Create the title HTML Div.
 title_div = Div(
@@ -52,25 +54,42 @@ ALL_LOADED_DATAFRAMES = list()
 ALL_LOADED_SAMPLES = list()
 
 for data_dict in DFMD:
-	# Construct a dataframe:
+    # Construct a dataframe:
     new_df = create_pandas_dataframe(data_dict.get("dataFile"))
     # Find the sample that this dataframe represents:
     new_sample = get_sample_names(data_dict.get("assay_md"))[0]
     ALL_LOADED_SAMPLES.extend(new_sample)
     # Add a new column that contains the compound
-    new_df['sample'] = new_compound
-    ALL_LOADED_DATAFRAMES.extend(new_df)
+    new_df['sample'] = new_sample
+    ALL_LOADED_DATAFRAMES.append(new_df)
 
 # Create SOURCES that will dynamically update themselves.
-ACTIVE_DATAFRAMES = ColumnDataSource(data=dict(active=[]))
+ACTIVE_DATAFRAMES = ColumnDataSource(data=dict(user_sel=[]))
 
 # Define active dataframes/compounds/aluminum dimers
 DATAFRAME_SEL = MultiSelect(
-	title="Dataframe Selection",
-	options=ALL_LOADED_SAMPLES
+    title="Dataframe Selection",
+    options=ALL_LOADED_SAMPLES
 )
+
+
+def update_dataframe_selector(attr, old, new):
+    """The updater function for the dataframe selector."""
+    ACTIVE_DATAFRAMES.data = dict(user_sel=[x for x in DATAFRAME_SEL.value])
+    print(ACTIVE_DATAFRAMES.data)
+
+
+DATAFRAME_SEL.on_change('value', update_dataframe_selector)
+
+
+ACTIVE_BONDS = ColumnDataSource(data=dict(user_sel=[], available=[]))
+
+ACTIVE_BONDS_SEL = MultiSelect(
+    title="Bond Selection",
+    options=FIXME
+)
+
 
 mainLayout = layout([DATAFRAME_SEL])
 
 curdoc().add_root(mainLayout)
-

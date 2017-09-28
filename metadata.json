@@ -14,15 +14,15 @@
                     "comments":[],
                     "dataFiles":[
                         {
-                            "@id":"#data/plot-csv-extract-4715574944",
+                            "@id":"#data/plot-csv-extract-140181337252192",
                             "comments":[],
-                            "name":"/Users/tyler/git/albokeh/data/sipos_2006_figure_1.csv",
+                            "name":"/home/tyler-biggs/git/albokeh/data/sipos_2006_figure_1.csv",
                             "type":"Plot-csv-extract"
                         },
                         {
-                            "@id":"#data/plot-csv-extract-4715573936",
+                            "@id":"#data/plot-csv-extract-140181337252136",
                             "comments":[],
-                            "name":"/Users/tyler/git/albokeh/data/sipos_2006_table1_raman.csv",
+                            "name":"/home/tyler-biggs/git/albokeh/data/sipos_2006_table1_raman.csv",
                             "type":"Plot-csv-extract"
                         }
                     ],
@@ -32,7 +32,7 @@
                         "samples":[]
                     },
                     "measurementType":{
-                        "@id":"#4715577240",
+                        "@id":"#140182030670704",
                         "annotationValue":"cm-1",
                         "termAccession":"",
                         "termSource":"Raman Spectroscopy"
@@ -40,20 +40,20 @@
                     "processSequence":[],
                     "technologyPlatform":"Unknown",
                     "technologyType":{
-                        "@id":"#4715576568",
+                        "@id":"#140182030670032",
                         "annotationValue":"raman spectra",
                         "termAccession":"",
                         "termSource":"Raman Spectroscopy"
                     },
                     "unitCategories":[
                         {
-                            "@id":"#4715577240",
+                            "@id":"#140182030670704",
                             "annotationValue":"cm-1",
                             "termAccession":"",
                             "termSource":"Raman Spectroscopy"
                         },
                         {
-                            "@id":"#4715576288",
+                            "@id":"#140182030669808",
                             "annotationValue":"Molarity",
                             "termAccession":"",
                             "termSource":"Amount Concentration"
@@ -99,27 +99,27 @@
                     "comments":[],
                     "dataFiles":[
                         {
-                            "@id":"#data/plot-csv-extract-4715575168",
+                            "@id":"#data/plot-csv-extract-140181337253256",
                             "comments":[],
-                            "name":"/Users/tyler/git/albokeh/data/sipos2006-fig2.csv",
+                            "name":"/home/tyler-biggs/git/albokeh/data/sipos2006-fig2.csv",
                             "type":"Plot-csv-extract"
                         },
                         {
-                            "@id":"#data/plot-csv-extract-4715574776",
+                            "@id":"#data/plot-csv-extract-140181337252808",
                             "comments":[],
-                            "name":"/Users/tyler/git/albokeh/data/sipos_2006_table1_nmr.csv",
+                            "name":"/home/tyler-biggs/git/albokeh/data/sipos_2006_table1_nmr.csv",
                             "type":"Plot-csv-extract"
                         },
                         {
-                            "@id":"#data/plot-csv-extract-4715575448",
+                            "@id":"#data/plot-csv-extract-140181337252360",
                             "comments":[],
-                            "name":"/Users/tyler/git/albokeh/data/sipos_2006_table2.csv",
+                            "name":"/home/tyler-biggs/git/albokeh/data/sipos_2006_table2.csv",
                             "type":"Plot-csv-extract"
                         },
                         {
-                            "@id":"#data/plot-csv-extract-4715573992",
+                            "@id":"#data/plot-csv-extract-140181337252416",
                             "comments":[],
-                            "name":"/Users/tyler/git/albokeh/data/sipos_2006_fig3.csv",
+                            "name":"/home/tyler-biggs/git/albokeh/data/sipos_2006_fig3.csv",
                             "type":"Plot-csv-extract"
                         }
                     ],
@@ -129,7 +129,7 @@
                         "samples":[]
                     },
                     "measurementType":{
-                        "@id":"#4715577128",
+                        "@id":"#140182030670368",
                         "annotationValue":"ppm",
                         "termAccession":"",
                         "termSource":"Nuclear Magnetic Resonance"
@@ -137,20 +137,20 @@
                     "processSequence":[],
                     "technologyPlatform":"Bruker",
                     "technologyType":{
-                        "@id":"#4715577184",
+                        "@id":"#140182030669080",
                         "annotationValue":"27 Al NMR",
                         "termAccession":"",
                         "termSource":"Nuclear Magnetic Resonance"
                     },
                     "unitCategories":[
                         {
-                            "@id":"#4715577128",
+                            "@id":"#140182030670368",
                             "annotationValue":"ppm",
                             "termAccession":"",
                             "termSource":"Nuclear Magnetic Resonance"
                         },
                         {
-                            "@id":"#4715576288",
+                            "@id":"#140182030669808",
                             "annotationValue":"Molarity",
                             "termAccession":"",
                             "termSource":"Amount Concentration"
@@ -196,9 +196,9 @@
                     "comments":[],
                     "dataFiles":[
                         {
-                            "@id":"#data/plot-csv-extract-4715575728",
+                            "@id":"#data/plot-csv-extract-140181337253592",
                             "comments":[],
-                            "name":"/Users/tyler/git/albokeh/data/zhou_thesis.csv",
+                            "name":"/home/tyler-biggs/git/albokeh/data/zhou_thesis.csv",
                             "type":"Plot-csv-extract"
                         }
                     ],
@@ -208,7 +208,7 @@
                         "samples":[]
                     },
                     "measurementType":{
-                        "@id":"#4715577240",
+                        "@id":"#140182030670704",
                         "annotationValue":"cm-1",
                         "termAccession":"",
                         "termSource":"Raman Spectroscopy"
@@ -216,20 +216,20 @@
                     "processSequence":[],
                     "technologyPlatform":"Unknown",
                     "technologyType":{
-                        "@id":"#4715576568",
+                        "@id":"#140182030670032",
                         "annotationValue":"raman spectra",
                         "termAccession":"",
                         "termSource":"Raman Spectroscopy"
                     },
                     "unitCategories":[
                         {
-                            "@id":"#4715577240",
+                            "@id":"#140182030670704",
                             "annotationValue":"cm-1",
                             "termAccession":"",
                             "termSource":"Raman Spectroscopy"
                         },
                         {
-                            "@id":"#4715576288",
+                            "@id":"#140182030669808",
                             "annotationValue":"Molarity",
                             "termAccession":"",
                             "termSource":"Amount Concentration"
@@ -273,18 +273,18 @@
                 {
                     "characteristicCategories":[
                         {
-                            "@id":"#4715573768",
+                            "@id":"#140181337253032",
                             "characteristicType":{
-                                "@id":"#4715573768",
+                                "@id":"#140181337253032",
                                 "annotationValue":"Al-Ob",
                                 "termAccession":"",
                                 "termSource":"Inter-atom distances"
                             }
                         },
                         {
-                            "@id":"#4715574328",
+                            "@id":"#140181337253200",
                             "characteristicType":{
-                                "@id":"#4715574328",
+                                "@id":"#140181337253200",
                                 "annotationValue":"Al-Oh",
                                 "termAccession":"",
                                 "termSource":"Inter-atom distances"
@@ -294,9 +294,9 @@
                     "comments":[],
                     "dataFiles":[
                         {
-                            "@id":"#data/maxime-rdf-4715575952",
+                            "@id":"#data/maxime-rdf-140181337255048",
                             "comments":[],
-                            "name":"/Users/tyler/git/albokeh/data/d1.RDF",
+                            "name":"/home/tyler-biggs/git/albokeh/data/d1.RDF",
                             "type":"Maxime-RDF"
                         }
                     ],
@@ -305,7 +305,7 @@
                         "otherMaterials":[],
                         "samples":[
                             {
-                                "@id":"#sample/4715574720",
+                                "@id":"#sample/140181337254824",
                                 "characteristics":[],
                                 "factorValues":[],
                                 "name":"(OH)3Al-O-Al(OH)32-+ 180 H2O + 2 Na+"
@@ -313,7 +313,7 @@
                         ]
                     },
                     "measurementType":{
-                        "@id":"#4715576792",
+                        "@id":"#140182030669920",
                         "annotationValue":"Simulated RDF",
                         "termAccession":"",
                         "termSource":"Simulated Data"
@@ -321,14 +321,263 @@
                     "processSequence":[],
                     "technologyPlatform":"To be filled out.",
                     "technologyType":{
-                        "@id":"#4715576792",
+                        "@id":"#140182030669920",
                         "annotationValue":"Simulated RDF",
                         "termAccession":"",
                         "termSource":"Simulated Data"
                     },
                     "unitCategories":[
                         {
-                            "@id":"#4715576344",
+                            "@id":"#140182030670144",
+                            "annotationValue":"Angstroms",
+                            "termAccession":"",
+                            "termSource":"Inter-atom distances"
+                        }
+                    ]
+                },
+                {
+                    "characteristicCategories":[
+                        {
+                            "@id":"#140181337252976",
+                            "characteristicType":{
+                                "@id":"#140181337252976",
+                                "annotationValue":"(OH)3Al-(OH)-Al(OH)3- + 179 H2O + HO- + 2 Na+",
+                                "termAccession":"",
+                                "termSource":"Aluminate Species"
+                            }
+                        },
+                        {
+                            "@id":"#140182030669920",
+                            "characteristicType":{
+                                "@id":"#140182030669920",
+                                "annotationValue":"Simulated RDF",
+                                "termAccession":"",
+                                "termSource":"Simulated Data"
+                            }
+                        },
+                        {
+                            "@id":"#140181337253032",
+                            "characteristicType":{
+                                "@id":"#140181337253032",
+                                "annotationValue":"Al-Ob",
+                                "termAccession":"",
+                                "termSource":"Inter-atom distances"
+                            }
+                        },
+                        {
+                            "@id":"#140181337253200",
+                            "characteristicType":{
+                                "@id":"#140181337253200",
+                                "annotationValue":"Al-Oh",
+                                "termAccession":"",
+                                "termSource":"Inter-atom distances"
+                            }
+                        }
+                    ],
+                    "comments":[],
+                    "dataFiles":[
+                        {
+                            "@id":"#data/maxime-rdf-140181337252696",
+                            "comments":[],
+                            "name":"/home/tyler-biggs/git/albokeh/data/d2.RDF",
+                            "type":"Maxime-RDF"
+                        }
+                    ],
+                    "filename":"",
+                    "materials":{
+                        "otherMaterials":[],
+                        "samples":[
+                            {
+                                "@id":"#sample/140181337254880",
+                                "characteristics":[],
+                                "factorValues":[],
+                                "name":"(OH)3Al-(OH)-Al(OH)3- + 179 H2O + HO- + 2 Na+"
+                            }
+                        ]
+                    },
+                    "measurementType":{
+                        "@id":"#140182030669920",
+                        "annotationValue":"Simulated RDF",
+                        "termAccession":"",
+                        "termSource":"Simulated Data"
+                    },
+                    "processSequence":[],
+                    "technologyPlatform":"To be filled out.",
+                    "technologyType":{
+                        "@id":"#140182030669920",
+                        "annotationValue":"Simulated RDF",
+                        "termAccession":"",
+                        "termSource":"Simulated Data"
+                    },
+                    "unitCategories":[
+                        {
+                            "@id":"#140182030670144",
+                            "annotationValue":"Angstroms",
+                            "termAccession":"",
+                            "termSource":"Inter-atom distances"
+                        }
+                    ]
+                },
+                {
+                    "characteristicCategories":[
+                        {
+                            "@id":"#140181337252472",
+                            "characteristicType":{
+                                "@id":"#140181337252472",
+                                "annotationValue":"(OH)3Al-(OH)2 -Al(OH)3- + 179 H2O + 2 Na+",
+                                "termAccession":"",
+                                "termSource":"Aluminate Species"
+                            }
+                        },
+                        {
+                            "@id":"#140182030669920",
+                            "characteristicType":{
+                                "@id":"#140182030669920",
+                                "annotationValue":"Simulated RDF",
+                                "termAccession":"",
+                                "termSource":"Simulated Data"
+                            }
+                        },
+                        {
+                            "@id":"#140181337253032",
+                            "characteristicType":{
+                                "@id":"#140181337253032",
+                                "annotationValue":"Al-Ob",
+                                "termAccession":"",
+                                "termSource":"Inter-atom distances"
+                            }
+                        },
+                        {
+                            "@id":"#140181337253200",
+                            "characteristicType":{
+                                "@id":"#140181337253200",
+                                "annotationValue":"Al-Oh",
+                                "termAccession":"",
+                                "termSource":"Inter-atom distances"
+                            }
+                        }
+                    ],
+                    "comments":[],
+                    "dataFiles":[
+                        {
+                            "@id":"#data/maxime-rdf-140181337254376",
+                            "comments":[],
+                            "name":"/home/tyler-biggs/git/albokeh/data/d3.RDF",
+                            "type":"Maxime-RDF"
+                        }
+                    ],
+                    "filename":"",
+                    "materials":{
+                        "otherMaterials":[],
+                        "samples":[
+                            {
+                                "@id":"#sample/140181337254936",
+                                "characteristics":[],
+                                "factorValues":[],
+                                "name":"(OH)3Al-(OH)2 -Al(OH)3- + 179 H2O + 2 Na+"
+                            }
+                        ]
+                    },
+                    "measurementType":{
+                        "@id":"#140182030669920",
+                        "annotationValue":"Simulated RDF",
+                        "termAccession":"",
+                        "termSource":"Simulated Data"
+                    },
+                    "processSequence":[],
+                    "technologyPlatform":"To be filled out.",
+                    "technologyType":{
+                        "@id":"#140182030669920",
+                        "annotationValue":"Simulated RDF",
+                        "termAccession":"",
+                        "termSource":"Simulated Data"
+                    },
+                    "unitCategories":[
+                        {
+                            "@id":"#140182030670144",
+                            "annotationValue":"Angstroms",
+                            "termAccession":"",
+                            "termSource":"Inter-atom distances"
+                        }
+                    ]
+                },
+                {
+                    "characteristicCategories":[
+                        {
+                            "@id":"#140181337252920",
+                            "characteristicType":{
+                                "@id":"#140181337252920",
+                                "annotationValue":"(OH)2Al-O2-Al(OH)2- + 181 H2O + 2 Na+",
+                                "termAccession":"",
+                                "termSource":"Aluminate Species"
+                            }
+                        },
+                        {
+                            "@id":"#140182030669920",
+                            "characteristicType":{
+                                "@id":"#140182030669920",
+                                "annotationValue":"Simulated RDF",
+                                "termAccession":"",
+                                "termSource":"Simulated Data"
+                            }
+                        },
+                        {
+                            "@id":"#140181337253032",
+                            "characteristicType":{
+                                "@id":"#140181337253032",
+                                "annotationValue":"Al-Ob",
+                                "termAccession":"",
+                                "termSource":"Inter-atom distances"
+                            }
+                        },
+                        {
+                            "@id":"#140181337253200",
+                            "characteristicType":{
+                                "@id":"#140181337253200",
+                                "annotationValue":"Al-Oh",
+                                "termAccession":"",
+                                "termSource":"Inter-atom distances"
+                            }
+                        }
+                    ],
+                    "comments":[],
+                    "dataFiles":[
+                        {
+                            "@id":"#data/maxime-rdf-140181337255216",
+                            "comments":[],
+                            "name":"/home/tyler-biggs/git/albokeh/data/d4.RDF",
+                            "type":"Maxime-RDF"
+                        }
+                    ],
+                    "filename":"",
+                    "materials":{
+                        "otherMaterials":[],
+                        "samples":[
+                            {
+                                "@id":"#sample/140181337254992",
+                                "characteristics":[],
+                                "factorValues":[],
+                                "name":"(OH)2Al-O2-Al(OH)2- + 181 H2O + 2 Na+"
+                            }
+                        ]
+                    },
+                    "measurementType":{
+                        "@id":"#140182030669920",
+                        "annotationValue":"Simulated RDF",
+                        "termAccession":"",
+                        "termSource":"Simulated Data"
+                    },
+                    "processSequence":[],
+                    "technologyPlatform":"To be filled out.",
+                    "technologyType":{
+                        "@id":"#140182030669920",
+                        "annotationValue":"Simulated RDF",
+                        "termAccession":"",
+                        "termSource":"Simulated Data"
+                    },
+                    "unitCategories":[
+                        {
+                            "@id":"#140182030670144",
                             "annotationValue":"Angstroms",
                             "termAccession":"",
                             "termSource":"Inter-atom distances"
@@ -346,7 +595,7 @@
                 "otherMaterials":[],
                 "samples":[
                     {
-                        "@id":"#sample/4715574720",
+                        "@id":"#sample/140181337254824",
                         "characteristics":[],
                         "factorValues":[],
                         "name":"(OH)3Al-O-Al(OH)32-+ 180 H2O + 2 Na+"
@@ -354,11 +603,122 @@
                 ],
                 "sources":[
                     {
-                        "@id":"#source/4715576064",
+                        "@id":"#source/140181337254712",
                         "characteristics":[],
                         "name":"Simulated Material"
                     }
                 ]
+            },
+            "people":[],
+            "processSequence":[],
+            "protocols":[],
+            "publicReleaseDate":"",
+            "publications":[],
+            "studyDesignDescriptors":[],
+            "submissionDate":"",
+            "title":"Explore various aluminate dimers.",
+            "unitCategories":[]
+        },
+        {
+            "assays":[
+                {
+                    "characteristicCategories":[],
+                    "comments":[],
+                    "dataFiles":[
+                        {
+                            "@id":"#data/maximevibrationalspectrum-140181337254152",
+                            "comments":[],
+                            "name":"/home/tyler-biggs/git/albokeh/data/d1.AlO.PWS",
+                            "type":"Maxime Vibrational Spectrum"
+                        },
+                        {
+                            "@id":"#data/maximevibrationalspectrum-140181337254208",
+                            "comments":[],
+                            "name":"/home/tyler-biggs/git/albokeh/data/d1.el.PWS",
+                            "type":"Maxime Vibrational Spectrum"
+                        },
+                        {
+                            "@id":"#data/maximevibrationalspectrum-140181337254096",
+                            "comments":[],
+                            "name":"/home/tyler-biggs/git/albokeh/data/d2.AlO.PWS",
+                            "type":"Maxime Vibrational Spectrum"
+                        },
+                        {
+                            "@id":"#data/maximevibrationalspectrum-140181337253536",
+                            "comments":[],
+                            "name":"/home/tyler-biggs/git/albokeh/data/d2.el.PWS",
+                            "type":"Maxime Vibrational Spectrum"
+                        },
+                        {
+                            "@id":"#data/maximevibrationalspectrum-140181337253872",
+                            "comments":[],
+                            "name":"/home/tyler-biggs/git/albokeh/data/d3.AlO.PWS",
+                            "type":"Maxime Vibrational Spectrum"
+                        },
+                        {
+                            "@id":"#data/maximevibrationalspectrum-140181337253928",
+                            "comments":[],
+                            "name":"/home/tyler-biggs/git/albokeh/data/d3.el.PWS",
+                            "type":"Maxime Vibrational Spectrum"
+                        },
+                        {
+                            "@id":"#data/maximevibrationalspectrum-140181337254488",
+                            "comments":[],
+                            "name":"/home/tyler-biggs/git/albokeh/data/d4.AlO.PWS",
+                            "type":"Maxime Vibrational Spectrum"
+                        },
+                        {
+                            "@id":"#data/maximevibrationalspectrum-140181337254544",
+                            "comments":[],
+                            "name":"/home/tyler-biggs/git/albokeh/data/d4.el.PWS",
+                            "type":"Maxime Vibrational Spectrum"
+                        }
+                    ],
+                    "filename":"",
+                    "materials":{
+                        "otherMaterials":[],
+                        "samples":[]
+                    },
+                    "measurementType":{
+                        "@id":"#140182030670704",
+                        "annotationValue":"cm-1",
+                        "termAccession":"",
+                        "termSource":"Raman Spectroscopy"
+                    },
+                    "processSequence":[],
+                    "technologyPlatform":"Unknown",
+                    "technologyType":{
+                        "@id":"#140182030670032",
+                        "annotationValue":"raman spectra",
+                        "termAccession":"",
+                        "termSource":"Raman Spectroscopy"
+                    },
+                    "unitCategories":[
+                        {
+                            "@id":"#140182030670704",
+                            "annotationValue":"cm-1",
+                            "termAccession":"",
+                            "termSource":"Raman Spectroscopy"
+                        },
+                        {
+                            "@id":"#140182030669808",
+                            "annotationValue":"Molarity",
+                            "termAccession":"",
+                            "termSource":"Amount Concentration"
+                        }
+                    ]
+                }
+            ],
+            "characteristicCategories":[],
+            "comments":[],
+            "description":"In the PWS files the vibrational power spectra are obtained from the atomic velocity autocorrelation function (VACF). These are the vibrational spectra you would obtain if you didn't have any selection rule, so essentially you get all the possible bands with the correct frequencies but the intensities are not directly related to the IR or Raman ones. Still, you can definitely extract the frequencies corresponding to the most intense bands as you will very likely find those in the IR and/or Raman spectra.",
+            "factors":[],
+            "filename":"",
+            "identifier":"maxime_vibrational_dimer_study",
+            "materials":{
+                "otherMaterials":[],
+                "samples":[],
+                "sources":[]
             },
             "people":[],
             "processSequence":[],
