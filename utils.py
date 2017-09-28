@@ -168,3 +168,18 @@ def attach_metadata_as_attr(pandas_df, assay_dict, attr):
 
 def attach_metadata_as_col(pandas_df, assay_dict):
     pass
+
+
+def get_sample_names(assay_metadata_dict):
+    """
+    Examines an individual assay metadata dictionary and returns True if
+    sample_name_str is found within the samples list within assay_metadata_dict.
+    The nested structure to search through is:
+    ['materials']['samples'] is a list of samples
+    Within each the string to match is given by ['name']
+    """
+    found_sample_l = list()
+    for sample in assay_metadata_dict['materials']['samples']:
+        found_sample_l.append(sample['name'])
+    return found_sample_l
+

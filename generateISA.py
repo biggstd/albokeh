@@ -213,47 +213,47 @@ def create_metadata(data_path):
     #######################
 
 
-    maxime_vib_assay = Assay(
-        measurement_type=raman_peak,
-        technology_type=raman_spectra,
-        technology_platform='Unknown',
-        units=[raman_peak, molarity],
-        data_files=[
-            MaximeVib(filename=join_path('d1.AlO.PWS')),
-            MaximeVib(filename=join_path('d1.el.PWS')),
+    # maxime_vib_assay = Assay(
+    #     measurement_type=raman_peak,
+    #     technology_type=raman_spectra,
+    #     technology_platform='Unknown',
+    #     units=[raman_peak, molarity],
+    #     data_files=[
+    #         MaximeVib(filename=join_path('d1.AlO.PWS')),
+    #         MaximeVib(filename=join_path('d1.el.PWS')),
 
-            MaximeVib(filename=join_path('d2.AlO.PWS')),
-            MaximeVib(filename=join_path('d2.el.PWS')),
+    #         MaximeVib(filename=join_path('d2.AlO.PWS')),
+    #         MaximeVib(filename=join_path('d2.el.PWS')),
 
-            MaximeVib(filename=join_path('d3.AlO.PWS')),
-            MaximeVib(filename=join_path('d3.el.PWS')),
+    #         MaximeVib(filename=join_path('d3.AlO.PWS')),
+    #         MaximeVib(filename=join_path('d3.el.PWS')),
 
-            MaximeVib(filename=join_path('d4.AlO.PWS')),
-            MaximeVib(filename=join_path('d4.el.PWS')),
+    #         MaximeVib(filename=join_path('d4.AlO.PWS')),
+    #         MaximeVib(filename=join_path('d4.el.PWS')),
 
-        ]
-    )
+    #     ]
+    # )
 
 
-    maxime_vibrational_dimer_study = Study(
-        identifier="maxime_vibrational_dimer_study",
-        title="Explore various aluminate dimers.",
-        description=(
-            "In the PWS files the vibrational power spectra are obtained from "
-            "the atomic velocity autocorrelation function (VACF). These are the "
-            "vibrational spectra you would obtain if you didn't have any "
-            "selection rule, so essentially you get all the possible bands "
-            "with the correct frequencies but the intensities are not directly "
-            "related to the IR or Raman ones. Still, you can definitely extract "
-            "the frequencies corresponding to the most intense bands as you will "
-            "very likely find those in the IR and/or Raman spectra."
-        ),
-        assays=[maxime_vib_assay]
-    )
+    # maxime_vibrational_dimer_study = Study(
+    #     identifier="maxime_vibrational_dimer_study",
+    #     title="Explore various aluminate dimers.",
+    #     description=(
+    #         "In the PWS files the vibrational power spectra are obtained from "
+    #         "the atomic velocity autocorrelation function (VACF). These are the "
+    #         "vibrational spectra you would obtain if you didn't have any "
+    #         "selection rule, so essentially you get all the possible bands "
+    #         "with the correct frequencies but the intensities are not directly "
+    #         "related to the IR or Raman ones. Still, you can definitely extract "
+    #         "the frequencies corresponding to the most intense bands as you will "
+    #         "very likely find those in the IR and/or Raman spectra."
+    #     ),
+    #     assays=[maxime_vib_assay]
+    # )
 
     # MAXIME RDF ASSAYS
     simulated_source = Source(name="Simulated Material")
-    sim_al_dimer_1 = Material(
+    sim_al_dimer_1 = Sample(
         name="(OH)3Al-O-Al(OH)32-+ 180 H2O + 2 Na+",
         # type_="Aluminum Dimer PLACEHOLDER"
     )
@@ -264,64 +264,63 @@ def create_metadata(data_path):
         technology_platform='To be filled out.',
         units=[angstrom_interatom],
         characteristic_categories=[
-            aluminate_dimer_1,
-            simulated_rdf,
+            # aluminate_dimer_1,
+            # simulated_rdf,
             Al_Ob_distance,
             Al_Oh_distance,
         ],
         data_files=[
             MaximeRDF(filename=join_path('d1.RDF')),
         ],
-        # sources=[simulated_source],
-        # samples=simulated_source,
+        samples=[sim_al_dimer_1],
     )
 
-    maxime_d2_rdf_assay = Assay(
-        measurement_type=simulated_rdf,
-        technology_type=simulated_rdf,
-        technology_platform='To be filled out.',
-        units=[angstrom_interatom],
-        characteristic_categories=[
-            aluminate_dimer_2,
-            simulated_rdf,
-            Al_Ob_distance,
-            Al_Oh_distance,
-        ],
-        data_files=[
-            MaximeRDF(filename=join_path('d2.RDF')),
-        ]
-    )
-    maxime_d3_rdf_assay = Assay(
-        measurement_type=simulated_rdf,
-        technology_type=simulated_rdf,
-        technology_platform='To be filled out.',
-        units=[angstrom_interatom],
-        characteristic_categories=[
-            aluminate_dimer_3,
-            simulated_rdf,
-            Al_Ob_distance,
-            Al_Oh_distance,
-        ],
-        data_files=[
-            MaximeRDF(filename=join_path('d3.RDF')),
-        ]
-    )
+    # maxime_d2_rdf_assay = Assay(
+    #     measurement_type=simulated_rdf,
+    #     technology_type=simulated_rdf,
+    #     technology_platform='To be filled out.',
+    #     units=[angstrom_interatom],
+    #     characteristic_categories=[
+    #         aluminate_dimer_2,
+    #         simulated_rdf,
+    #         Al_Ob_distance,
+    #         Al_Oh_distance,
+    #     ],
+    #     data_files=[
+    #         MaximeRDF(filename=join_path('d2.RDF')),
+    #     ]
+    # )
+    # maxime_d3_rdf_assay = Assay(
+    #     measurement_type=simulated_rdf,
+    #     technology_type=simulated_rdf,
+    #     technology_platform='To be filled out.',
+    #     units=[angstrom_interatom],
+    #     characteristic_categories=[
+    #         aluminate_dimer_3,
+    #         simulated_rdf,
+    #         Al_Ob_distance,
+    #         Al_Oh_distance,
+    #     ],
+    #     data_files=[
+    #         MaximeRDF(filename=join_path('d3.RDF')),
+    #     ]
+    # )
 
-    maxime_d4_rdf_assay = Assay(
-        measurement_type=simulated_rdf,
-        technology_type=simulated_rdf,
-        technology_platform='To be filled out.',
-        units=[angstrom_interatom],
-        characteristic_categories=[
-            aluminate_dimer_4,
-            simulated_rdf,
-            Al_Ob_distance,
-            Al_Oh_distance,
-        ],
-        data_files=[
-            MaximeRDF(filename=join_path('d4.RDF')),
-        ]
-    )
+    # maxime_d4_rdf_assay = Assay(
+    #     measurement_type=simulated_rdf,
+    #     technology_type=simulated_rdf,
+    #     technology_platform='To be filled out.',
+    #     units=[angstrom_interatom],
+    #     characteristic_categories=[
+    #         aluminate_dimer_4,
+    #         simulated_rdf,
+    #         Al_Ob_distance,
+    #         Al_Oh_distance,
+    #     ],
+    #     data_files=[
+    #         MaximeRDF(filename=join_path('d4.RDF')),
+    #     ]
+    # )
 
     maxime_rdf_study = Study(
         identifier="maxime_rdf_study",
@@ -335,12 +334,13 @@ def create_metadata(data_path):
             "and finally the columns correspond to the running "
             "coordination numbers for these same pair types."
         ),
-
+        sources=[simulated_source],
+        samples=[sim_al_dimer_1],
         assays=[
             maxime_d1_rdf_assay,
-            maxime_d2_rdf_assay,
-            maxime_d3_rdf_assay,
-            maxime_d4_rdf_assay,
+            # maxime_d2_rdf_assay,
+            # maxime_d3_rdf_assay,
+            # maxime_d4_rdf_assay,
         ]
     )
 
@@ -355,7 +355,7 @@ def create_metadata(data_path):
             sipos2006_nmr_study,
             zhou_raman_study,
             maxime_rdf_study,
-            maxime_vibrational_dimer_study,
+            # maxime_vibrational_dimer_study,
         ]
     )
 
