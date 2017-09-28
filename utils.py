@@ -173,7 +173,9 @@ def attach_metadata_as_col(pandas_df, assay_dict):
 def get_sample_names(assay_metadata_dict):
     """
     Examines an individual assay metadata dictionary and returns True if
-    sample_name_str is found within the samples list within assay_metadata_dict.
+    sample_name_str is found within the samples list within
+    assay_metadata_dict.
+
     The nested structure to search through is:
     ['materials']['samples'] is a list of samples
     Within each the string to match is given by ['name']
@@ -182,4 +184,33 @@ def get_sample_names(assay_metadata_dict):
     for sample in assay_metadata_dict['materials']['samples']:
         found_sample_l.append(sample['name'])
     return found_sample_l
+
+
+def retr_termSource_values(assay_metadata, termSource):
+    """
+    Examines an input of assay_metadata. Iterates through the characteristic
+    categoires and returns the values of those matching the input termSource.
+
+    :param:
+    """
+    matching_termSource_l = list()
+
+    for char_entry in assay_metadata["characteristicCategories"]:
+        # Check the termSource to ensure the desired key is being examined
+        if char_entry["characteristicType"]['termSource'] == termSource:
+            match = char_entry["characteristicType"]['annotationValue']
+            matching_termSource_l.append(match)
+
+    return matching_termSource_l
+
+
+
+
+
+
+
+
+
+
+
 
