@@ -14,9 +14,10 @@ import collections
 import itertools
 # Bokeh imports
 from bokeh.plotting import figure
-from bokeh.layouts import layout, widgetbox
+from bokeh.layouts import layout, widgetbox, row, column
 from bokeh.models import ColumnDataSource, HoverTool
-from bokeh.models.widgets import MultiSelect, CheckboxGroup, Div, Paragraph
+from bokeh.models.widgets import MultiSelect, Div, Paragraph,\
+    Button
 from bokeh.palettes import linear_palette, viridis
 from bokeh.io import curdoc
 # Local, relative module imports
@@ -83,6 +84,8 @@ DATAFRAME_SEL = MultiSelect(
 BOND_SEL = MultiSelect(
     title="Bond Selector")
 
+# PRIMARY_FIGURE = figure(width=1000)
+
 
 def update_dataframe_selector(attr, old, new):
     """The updater function for the dataframe selector."""
@@ -105,24 +108,61 @@ def update_dataframe_selector(attr, old, new):
 
 def create_figure():
     """Create the figure."""
+
     fig = figure(width=800)
-    
-    ACTIVE_DATAFRAMES.data
+
+    sel_dataframes = [ALL_LOADED_DATAFRAMES[x]["dataframe"]
+                      for x in DATAFRAME_SEL.value]
+
+    sel_bonds = BOND_SEL.value
+
+    # enumerate through the data frames to be used and the index value.
+    # enumerate() is used as zip() failes when there is only one item.
+    for idx, df in enumerate(sel_dataframes):
+
+        # Declare the source for the current frame:
+        fig_source = ColumnDataSource(df)
+
+        # Iterate over the bonds selected.
+        for idxx, bond in enumerate(sel_bonds):
+
+            active_bond = 'RDF_' + bond
+            fig.line(  # Draw a line plot
+                source=fig_source,
+                x='r',
+                y=active_bond,
+                legend='sample',
+                # color=bond_color,
+                line_width=1.5
+            )
+
+            fig.circle(  # Draw a circle/dot plot
+                source=fig_source,
+                x='r',
+                y=active_bond,
+                legend='sample',
+                # color=bond_color,
+            )
+
+    return fig
+
+
+def build_fig_callback():
+    """This is the callback function that will update the figure curdoc
+    model."""
+    mainLayout.children[1] = create_figure()
 
 
 DATAFRAME_SEL.on_change('value', update_dataframe_selector)
 
-
-# Create a source for the active bonds from within the loaded dataframes
-# ACTIVE_BONDS = ColumnDataSource(data=dict(user_sel=[], available=[]))
-
-# ACTIVE_BONDS_SEL = MultiSelect(
-#     title="Bond Selection",
-#     options=FIXME)
+MAKE_PLOT_BUTTON = Button(label="Build Plot")
+MAKE_PLOT_BUTTON.on_click(build_fig_callback)
 
 p = Paragraph(text="""The dataframe selector represents the selection
-    of one *.csv file.""", width=200, height=100)
+    of one *.csv file.""")
 
-mainLayout = layout([widgetbox(DATAFRAME_SEL, BOND_SEL)], [widgetbox(p)])
+controls = widgetbox(DATAFRAME_SEL, BOND_SEL, MAKE_PLOT_BUTTON, p)
+
+mainLayout = row(controls, create_figure())
 
 curdoc().add_root(mainLayout)
