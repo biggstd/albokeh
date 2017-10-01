@@ -13,9 +13,10 @@ import sys
 import collections
 import itertools
 # Bokeh imports
+from bokeh import events
 from bokeh.plotting import figure
 from bokeh.layouts import layout, widgetbox, row, column
-from bokeh.models import ColumnDataSource, HoverTool
+from bokeh.models import ColumnDataSource, HoverTool, CDSView
 from bokeh.models.widgets import MultiSelect, Div, Paragraph,\
     Button
 from bokeh.palettes import linear_palette, viridis
@@ -25,7 +26,6 @@ sys.path.append(os.getcwd())
 from utils import read_metadata, md_reader, create_pandas_dataframe,\
     get_sample_names, retr_termSource_values
 from generateISA import create_metadata, main
-
 
 # Create the title HTML Div.
 title_div = Div(
@@ -84,8 +84,6 @@ DATAFRAME_SEL = MultiSelect(
 BOND_SEL = MultiSelect(
     title="Bond Selector")
 
-# PRIMARY_FIGURE = figure(width=1000)
-
 
 def update_dataframe_selector(attr, old, new):
     """The updater function for the dataframe selector."""
@@ -109,12 +107,20 @@ def update_dataframe_selector(attr, old, new):
 def create_figure():
     """Create the figure."""
 
-    fig = figure(width=800)
+    fig = figure(width=800, tools="pan,wheel_zoom,box_zoom,reset,tap")
 
     sel_dataframes = [ALL_LOADED_DATAFRAMES[x]["dataframe"]
                       for x in DATAFRAME_SEL.value]
 
+    metadata_list = [ALL_LOADED_DATAFRAMES[x]["assay_md"]
+                     for x in DATAFRAME_SEL.value]
+
     sel_bonds = BOND_SEL.value
+
+    # COLORS
+    # Count the number of active dataframes, and cut the viridis palette
+    # to this length
+    # df_count = len(sel_dataframes)
 
     # enumerate through the data frames to be used and the index value.
     # enumerate() is used as zip() failes when there is only one item.
@@ -123,17 +129,26 @@ def create_figure():
         # Declare the source for the current frame:
         fig_source = ColumnDataSource(df)
 
+        # Add the callback event. In this case I call a function that takess
+        # the associated metadata as an argument, and returns a callback
+        # function. This is to workaroudn callback functions only allowing
+        # one argument.
+        fig.on_event(events.SelectionGeometry,
+                     generate_selection_callback(metadata=metadata_list[idx]))
+
         # Iterate over the bonds selected.
         for idxx, bond in enumerate(sel_bonds):
 
             active_bond = 'RDF_' + bond
+
             fig.line(  # Draw a line plot
                 source=fig_source,
                 x='r',
                 y=active_bond,
                 legend='sample',
                 # color=bond_color,
-                line_width=1.5
+                line_width=1.5,
+                name="BIGG SUCCES",
             )
 
             fig.circle(  # Draw a circle/dot plot
@@ -141,6 +156,7 @@ def create_figure():
                 x='r',
                 y=active_bond,
                 legend='sample',
+                name="BIGG SUCCES",
                 # color=bond_color,
             )
 
@@ -150,7 +166,15 @@ def create_figure():
 def build_fig_callback():
     """This is the callback function that will update the figure curdoc
     model."""
-    mainLayout.children[1] = create_figure()
+    mainLayout.children[1].children[1] = create_figure()
+
+
+def generate_selection_callback(metadata):
+    """Generates and returns a callback function that updates a div element."""
+    def generated_callback(event):
+        mainLayout.children[2] = Paragraph(text=str(metadata))
+
+    return generated_callback
 
 
 DATAFRAME_SEL.on_change('value', update_dataframe_selector)
@@ -161,8 +185,23 @@ MAKE_PLOT_BUTTON.on_click(build_fig_callback)
 p = Paragraph(text="""The dataframe selector represents the selection
     of one *.csv file.""")
 
+# div = Div(width=1000)
+
 controls = widgetbox(DATAFRAME_SEL, BOND_SEL, MAKE_PLOT_BUTTON, p)
 
-mainLayout = row(controls, create_figure())
+mainLayout = layout(
+    [title_div],
+    [controls, create_figure()],
+    Paragraph(),
+)
 
 curdoc().add_root(mainLayout)
+
+"""
+@
+
+With your advice I was able to link a point selection, using the taptool,
+to a python callback function.
+
+Now I have a different issue,
+"""
