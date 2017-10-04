@@ -6,19 +6,29 @@ Boiler Plat Visualization Application
 :Author:
     Tyler Biggs
 
+.. todo::
+
+    [x] Have this application auto-generate the datapaths correctly
+    [ ] try to swap to get_model_by_name to avoid unlabeled index use
+    [ ] structure the display of selected metadata
+    [ ] add a nested color structure (by dataframe then by column)?
+    [ ] add an interative marker structure?
+    [ ] Move legend to margins
+
 """
 
+# General imports
 import os
 import sys
 import collections
 import itertools
+import json
 # Bokeh imports
 from bokeh import events
 from bokeh.plotting import figure
 from bokeh.layouts import layout, widgetbox, row, column
-from bokeh.models import ColumnDataSource, HoverTool, CDSView
-from bokeh.models.widgets import MultiSelect, Div, Paragraph,\
-    Button
+from bokeh.models import ColumnDataSource, HoverTool
+from bokeh.models.widgets import MultiSelect, Div, Paragraph, Button
 from bokeh.palettes import linear_palette, viridis
 from bokeh.io import curdoc
 # Local, relative module imports
@@ -26,6 +36,11 @@ sys.path.append(os.getcwd())
 from utils import read_metadata, md_reader, create_pandas_dataframe,\
     get_sample_names, retr_termSource_values
 from generateISA import create_metadata, main
+
+
+# Build the metadata with system appropriate filepaths
+# os.path.abspath('data')
+METADATA = json.loads(create_metadata(os.path.abspath('albokeh/data')))
 
 # Create the title HTML Div.
 title_div = Div(
@@ -36,7 +51,7 @@ title_div = Div(
 )
 
 # Source the metadata
-METADATA = read_metadata("albokeh/metadata.json")
+# METADATA = read_metadata("albokeh/metadata.json")
 # Create the search dictionary for retr_dataframe
 SEARCH_DICT = {'annotationValue': 'Simulated RDF'}
 
@@ -107,7 +122,11 @@ def update_dataframe_selector(attr, old, new):
 def create_figure():
     """Create the figure."""
 
-    fig = figure(width=800, tools="pan,wheel_zoom,box_zoom,reset,tap")
+    fig = figure(
+        name="primary_figure",
+        width=800,
+        tools="pan,wheel_zoom,box_zoom,reset,tap"
+    )
 
     sel_dataframes = [ALL_LOADED_DATAFRAMES[x]["dataframe"]
                       for x in DATAFRAME_SEL.value]
@@ -116,11 +135,6 @@ def create_figure():
                      for x in DATAFRAME_SEL.value]
 
     sel_bonds = BOND_SEL.value
-
-    # COLORS
-    # Count the number of active dataframes, and cut the viridis palette
-    # to this length
-    # df_count = len(sel_dataframes)
 
     # enumerate through the data frames to be used and the index value.
     # enumerate() is used as zip() failes when there is only one item.
@@ -148,7 +162,6 @@ def create_figure():
                 legend='sample',
                 # color=bond_color,
                 line_width=1.5,
-                name="BIGG SUCCES",
             )
 
             fig.circle(  # Draw a circle/dot plot
@@ -156,7 +169,6 @@ def create_figure():
                 x='r',
                 y=active_bond,
                 legend='sample',
-                name="BIGG SUCCES",
                 # color=bond_color,
             )
 
@@ -172,7 +184,9 @@ def build_fig_callback():
 def generate_selection_callback(metadata):
     """Generates and returns a callback function that updates a div element."""
     def generated_callback(event):
-        mainLayout.children[2] = Paragraph(text=str(metadata))
+        """The new callback function to be assigned."""
+        print(event)
+        mainLayout.children[2].children[0] = Paragraph(text=str(metadata))
 
     return generated_callback
 
@@ -185,23 +199,15 @@ MAKE_PLOT_BUTTON.on_click(build_fig_callback)
 p = Paragraph(text="""The dataframe selector represents the selection
     of one *.csv file.""")
 
-# div = Div(width=1000)
-
 controls = widgetbox(DATAFRAME_SEL, BOND_SEL, MAKE_PLOT_BUTTON, p)
 
 mainLayout = layout(
-    [title_div],
-    [controls, create_figure()],
-    Paragraph(),
+    children=[
+        [title_div],
+        [controls, create_figure()],
+        [Paragraph(), Paragraph()]
+    ],
+    sizing_mode='fixed'
 )
 
 curdoc().add_root(mainLayout)
-
-"""
-@
-
-With your advice I was able to link a point selection, using the taptool,
-to a python callback function.
-
-Now I have a different issue,
-"""
