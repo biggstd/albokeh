@@ -186,7 +186,7 @@ def generate_selection_callback(metadata):
     def generated_callback(event):
         """The new callback function to be assigned."""
         print(event)
-        mainLayout.children[2].children[0] = Paragraph(text=str(metadata))
+        mainLayout.children[2] = Paragraph(text=str(metadata))
 
     return generated_callback
 
@@ -205,7 +205,7 @@ mainLayout = layout(
     children=[
         [title_div],
         [controls, create_figure()],
-        [Paragraph(), Paragraph()]
+        Paragraph()
     ],
     sizing_mode='fixed'
 )
