@@ -147,8 +147,9 @@ def create_figure():
         # the associated metadata as an argument, and returns a callback
         # function. This is to workaroudn callback functions only allowing
         # one argument.
-        fig.on_event(events.SelectionGeometry,
-                     generate_selection_callback(metadata=metadata_list[idx]))
+        # fig.on_event(events.SelectionGeometry,
+                     # generate_selection_callback(metadata=metadata_list[idx]))
+        fig_source.callback = generate_selection_callback(metadata=metadata_list[idx])
 
         # Iterate over the bonds selected.
         for idxx, bond in enumerate(sel_bonds):

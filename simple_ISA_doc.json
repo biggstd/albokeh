@@ -1,0 +1,56 @@
+{
+    "comments":[],
+    "description":"A longer description that describes the ISA document in question. It could go on for quite some time, and cover several lines.",
+    "identifier":"Investigation identifier",
+    "ontologySourceReferences":[
+        {
+            "description":"Ontology for Investigations",
+            "file":"",
+            "name":"OBI",
+            "version":""
+        }
+    ],
+    "people":[],
+    "publicReleaseDate":"",
+    "publications":[],
+    "studies":[
+        {
+            "assays":[],
+            "characteristicCategories":[],
+            "comments":[],
+            "description":"My ISA study description.",
+            "factors":[],
+            "filename":"",
+            "identifier":"studyID",
+            "materials":{
+                "otherMaterials":[],
+                "samples":[],
+                "sources":[
+                    {
+                        "@id":"#source/140425169787760",
+                        "characteristics":[],
+                        "name":"source_material"
+                    }
+                ]
+            },
+            "people":[],
+            "processSequence":[],
+            "protocols":[],
+            "publicReleaseDate":"",
+            "publications":[],
+            "studyDesignDescriptors":[
+                {
+                    "@id":"#140425169787816",
+                    "annotationValue":"intervention design",
+                    "termAccession":"",
+                    "termSource":"OBI"
+                }
+            ],
+            "submissionDate":"",
+            "title":"My ISA Study",
+            "unitCategories":[]
+        }
+    ],
+    "submissionDate":"",
+    "title":"Ttitle of the Investigation"
+}

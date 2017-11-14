@@ -137,18 +137,22 @@ def create_metadata(data_path):
         doi="10.1016/j.talanta.2006.02.008"
     )
 
-    sipos2006_nmr_assay = Assay(
+    sipos2006_nmr_assay_fig2 = Assay(
         measurement_type=ppm,
         technology_type=Al_nmr,
         technology_platform='Bruker',
         units=[ppm, molarity],
         data_files=[
             extractedCSV(filename=join_path('sipos2006-fig2.csv')),
-            extractedCSV(filename=join_path('sipos_2006_table1_nmr.csv')),
-            extractedCSV(filename=join_path('sipos_2006_table2.csv')),
-            extractedCSV(filename=join_path('sipos_2006_fig3.csv')),
-        ]
-    )
+            # extractedCSV(filename=join_path('sipos_2006_table1_nmr.csv')),
+            # extractedCSV(filename=join_path('sipos_2006_table2.csv')),
+            # extractedCSV(filename=join_path('sipos_2006_fig3.csv')),
+        ])
+    sipos2006_nmr_assay_fig2.samples.append(
+        Sample(
+            name='temperature',
+            factor_values=[FactorValue(value=25, unit='celsius')]))
+    # sipos2006_nmr_assay_fig2.
 
     sipos2006_raman_assay = Assay(
         measurement_type=raman_peak,
@@ -174,7 +178,7 @@ def create_metadata(data_path):
         title='1D NMR Studies',
         description='One dimensional NMR studies',
         publications=[sipos_2006_pub],
-        assays=[sipos2006_nmr_assay]
+        assays=[sipos2006_nmr_assay_fig2]
     )
 
 
@@ -385,6 +389,7 @@ def main():
     path = 'metadata.json'
     with open(path, 'w') as f:
         f.write(nmr_metadata)
+
 
 if __name__ == '__main__':
     main()
